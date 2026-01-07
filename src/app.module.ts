@@ -8,6 +8,7 @@ import { UsersModule } from './user/user.module';
 import { ProfileModule } from './profile/profile.module';
 import { PostsModule } from './post/posts.module';
 import { CommentsModule } from './comments/comments.module';
+import { LikesModule } from './likes/likes.module';
 import databaseConfig from './config/database.config';
 import jwtConfig from './config/jwt.config';
 import appConfig from './config/app.config';
@@ -30,9 +31,9 @@ import appConfig from './config/app.config';
         password: configService.get('database.password'),
         database: configService.get('database.database'),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
-        migrations: [__dirname + '/database/migrations/*{.ts,.js}'], // ADD THIS
-        synchronize: false, // CHANGE TO FALSE - USE MIGRATIONS INSTEAD
-        migrationsRun: true, // ADD THIS
+        migrations: [__dirname + '/database/migrations/*{.ts,.js}'], 
+        synchronize: false, 
+        migrationsRun: true, 
         logging: configService.get('app.environment') === 'development',
         ssl: configService.get('app.environment') === 'production',
       }),
@@ -51,6 +52,7 @@ import appConfig from './config/app.config';
     ProfileModule,
     PostsModule,
     CommentsModule,
+    LikesModule,
   ],
   providers: [
     {
