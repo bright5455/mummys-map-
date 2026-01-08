@@ -1,0 +1,16 @@
+export enum MediaContext {
+  POST = 'post',
+  COMMENT = 'comment',
+  PROFILE_PICTURE = 'profile_picture',
+  COVER_PHOTO = 'cover_photo',
+  ARTICLE = 'article',
+  PRODUCT = 'product',
+  STORY = 'story',
+  MESSAGE = 'message',
+  GROUP = 'group',
+  TRACKING = 'tracking',
+  MEDICAL_RECORD = 'medical_record',
+  PRESCRIPTION = 'prescription',
+  DOCUMENT = 'document',
+  OTHER = 'other',
+}

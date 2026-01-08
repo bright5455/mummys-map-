@@ -104,6 +104,15 @@ export class User {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @Column({ type: 'int', default: 0 })
+followersCount: number;
+
+@Column({ type: 'int', default: 0 })
+followingCount: number;
+
+@Column({ default: false })
+isPrivate: boolean;
 }
 
   
