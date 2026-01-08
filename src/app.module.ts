@@ -10,6 +10,7 @@ import { PostsModule } from './post/posts.module';
 import { CommentsModule } from './comments/comments.module';
 import { LikesModule } from './likes/likes.module';
 import { MediaModule } from './media/media.module';
+import { FollowsModule } from './follows/follows.module';
 import databaseConfig from './config/database.config';
 import jwtConfig from './config/jwt.config';
 import appConfig from './config/app.config';
@@ -55,6 +56,7 @@ import appConfig from './config/app.config';
     CommentsModule,
     LikesModule,
     MediaModule,
+    FollowsModule,
   ],
   providers: [
     {
