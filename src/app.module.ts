@@ -11,6 +11,7 @@ import { CommentsModule } from './comments/comments.module';
 import { LikesModule } from './likes/likes.module';
 import { MediaModule } from './media/media.module';
 import { FollowsModule } from './follows/follows.module';
+import { StoriesModule } from './stories/stories.module';
 import databaseConfig from './config/database.config';
 import jwtConfig from './config/jwt.config';
 import appConfig from './config/app.config';
@@ -57,6 +58,7 @@ import appConfig from './config/app.config';
     LikesModule,
     MediaModule,
     FollowsModule,
+    StoriesModule,
   ],
   providers: [
     {
