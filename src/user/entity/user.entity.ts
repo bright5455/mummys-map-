@@ -5,8 +5,11 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   Index,
+  JoinColumn,
+  OneToOne,
 } from 'typeorm';
 import { Exclude } from 'class-transformer';
+import { Profile } from '../../profile/entities/profile.entity';
 
 export enum AuthProvider {
   LOCAL = 'local',
@@ -113,6 +116,10 @@ followingCount: number;
 
 @Column({ default: false })
 isPrivate: boolean;
+
+@OneToOne(() => Profile, (profile) => profile.user)
+@JoinColumn()
+profile: Profile;
 }
 
   

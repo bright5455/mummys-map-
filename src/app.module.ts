@@ -16,6 +16,7 @@ import { StoriesModule } from './stories/stories.module';
 import { GroupsModule } from './groupchat/groupchat.module';
 import { GroupMembersModule } from './groupmembers/groupmembers.module';
 import { GroupPostsModule } from './groupposts/grouppost.module';
+import { ArticlesModule } from './articles/articles.module';
 import databaseConfig from './config/database.config';
 import jwtConfig from './config/jwt.config';
 import appConfig from './config/app.config';
@@ -106,6 +107,7 @@ import appConfig from './config/app.config';
     GroupsModule,
     GroupMembersModule,
     GroupPostsModule,
+    ArticlesModule,
   ],
   providers: [
     {
