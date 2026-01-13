@@ -7,6 +7,7 @@ import { PostLike } from './entities/post-like.entity';
 import { PostMedia } from './entities/post-media.entity';
 import { PostBookmark } from './entities/post-bookmark.entity';
 
+
 @Module({
   imports: [
     TypeOrmModule.forFeature([
@@ -15,6 +16,7 @@ import { PostBookmark } from './entities/post-bookmark.entity';
       PostMedia,
       PostBookmark,
     ]),
+
   ],
   controllers: [PostsController],
   providers: [PostsService],

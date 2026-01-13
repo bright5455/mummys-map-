@@ -11,21 +11,16 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const configService = app.get(ConfigService);
-
-  // Security
   app.use(helmet());
 
-  // CORS
   const frontendUrl = configService.get<string>('FRONTEND_URL') ?? '*';
   app.enableCors({
     origin: frontendUrl,
     credentials: true,
   });
 
-  // Global Prefix
   app.setGlobalPrefix('api/v1');
 
-  // Global Pipes
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
@@ -37,13 +32,11 @@ async function bootstrap() {
     }),
   );
 
-  // Global Filters
+ 
   app.useGlobalFilters(new HttpExceptionFilter());
 
-  // Global Interceptors
   app.useGlobalInterceptors(new TransformInterceptor());
 
-  // Swagger Documentation
   const swaggerConfig = new DocumentBuilder()
     .setTitle('Mummy Map API')
     .setDescription('Comprehensive API documentation for Mummy Map application')
@@ -72,8 +65,6 @@ async function bootstrap() {
       operationsSorter: 'alpha',
     },
   });
-
-  // Application Port (SAFE & TYPED)
   const port = configService.get<number>('PORT') ?? 3000;
   await app.listen(port);
 
